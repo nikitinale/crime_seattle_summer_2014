@@ -1,0 +1,15 @@
+
+* introduction
+
+* Load Data
+
+#+BEGIN_SRC python :exports results :results output :session crime :preamble "# -*- coding: utf-8 -*-"
+import pandas as pd
+import numpy as np
+import matplotlib as plt
+
+seattle_dat = pd.read_csv('seattle_incidents_summer_2014.csv')
+print(seattle_dat.columns)
+print(seattle_dat.head)
+
+#+END_SRC

@@ -1,0 +1,93 @@
+
+* introduction
+
+* Load Data
+
+#+BEGIN_SRC python :exports results :results output :session crime :preamble "# -*- coding: utf-8 -*-"
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+seattle_dat = pd.read_csv('seattle_incidents_summer_2014.csv')
+print(seattle_dat.columns)
+#print(seattle_dat.head())
+#print(seattle_dat.info())
+#seattle_dat['Summarized Offense Description'].hist()
+print(seattle_dat['Date Reported'].value_counts())
+plt.show()
+
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+Index(['RMS CDW ID', 'General Offense Number', 'Offense Code',
+       'Offense Code Extension', 'Offense Type', 'Summary Offense Code',
+       'Summarized Offense Description', 'Date Reported',
+       'Occurred Date or Date Range Start', 'Occurred Date Range End',
+       'Hundred Block Location', 'District/Sector', 'Zone/Beat',
+       'Census Tract 2000', 'Longitude', 'Latitude', 'Location', 'Month',
+       'Year'],
+      dtype='object')
+08/04/2014 07:00:00 PM    11
+07/10/2014 01:16:00 PM     9
+07/07/2014 08:00:00 PM     8
+06/25/2014 05:26:00 PM     8
+07/24/2014 11:05:00 AM     8
+07/22/2014 05:06:00 PM     7
+08/12/2014 09:46:00 PM     7
+06/30/2014 09:27:00 PM     7
+07/17/2014 04:23:00 PM     7
+06/19/2014 02:52:00 PM     7
+07/27/2014 08:40:00 PM     7
+07/07/2014 05:26:00 PM     7
+07/01/2014 12:59:00 PM     6
+08/25/2014 02:51:00 PM     6
+06/23/2014 10:13:00 AM     6
+07/15/2014 01:54:00 PM     6
+08/04/2014 11:43:00 AM     6
+08/28/2014 10:28:00 AM     6
+08/22/2014 07:07:00 PM     6
+08/19/2014 08:19:00 PM     6
+06/30/2014 09:22:00 AM     6
+08/10/2014 12:59:00 PM     6
+08/29/2014 11:08:00 AM     6
+08/04/2014 09:50:00 AM     6
+06/04/2014 02:56:00 PM     6
+08/17/2014 04:40:00 PM     6
+06/20/2014 06:35:00 PM     6
+08/17/2014 09:17:00 AM     6
+06/02/2014 02:40:00 PM     6
+07/22/2014 06:56:00 PM     6
+                          ..
+08/13/2014 12:59:00 AM     1
+06/18/2014 06:23:00 PM     1
+06/19/2014 05:32:00 PM     1
+06/03/2014 10:42:00 PM     1
+11/13/2014 12:59:00 AM     1
+08/12/2014 01:51:00 AM     1
+08/03/2014 05:15:00 PM     1
+08/03/2014 01:53:00 PM     1
+06/24/2014 05:30:00 PM     1
+07/16/2014 07:25:00 PM     1
+07/07/2014 05:33:00 PM     1
+06/21/2014 12:48:00 AM     1
+08/08/2014 06:54:00 PM     1
+07/16/2014 11:44:00 AM     1
+07/11/2014 01:47:00 PM     1
+09/05/2014 03:29:00 PM     1
+06/29/2014 03:11:00 AM     1
+08/22/2014 11:08:00 AM     1
+07/04/2014 10:22:00 PM     1
+07/12/2014 02:40:00 PM     1
+07/11/2014 10:48:00 AM     1
+07/25/2014 09:51:00 PM     1
+07/28/2014 11:37:00 AM     1
+06/14/2014 02:16:00 PM     1
+09/11/2014 02:58:00 PM     1
+06/25/2014 05:50:00 PM     1
+07/29/2014 08:56:00 AM     1
+08/07/2014 04:10:00 PM     1
+07/03/2014 03:57:00 PM     1
+02/06/2015 10:25:00 AM     1
+Name: Date Reported, Length: 15766, dtype: int64
+#+end_example
